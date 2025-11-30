@@ -67,6 +67,7 @@
     <child link="front_right_wheel_link"/>
     <origin rpy="3.14 0 0" xyz="0.249 -0.29153 -0.0702"/>
     <axis rpy="0 0 0" xyz="0 -1 0"/>
+    <limit effort="0.1" velocity="10.0"/>
   </joint>
   <link name="front_left_wheel_link">
     <inertial>
@@ -92,6 +93,7 @@
     <child link="front_left_wheel_link"/>
     <origin rpy="0 0 0" xyz="0.249 0.29153 -0.0702"/>
     <axis rpy="0 0 0" xyz="0 -1 0"/>
+    <limit effort="0.1" velocity="10.0"/>
   </joint>
   <link name="rear_left_wheel_link">
     <inertial>
@@ -117,6 +119,7 @@
     <child link="rear_left_wheel_link"/>
     <origin rpy="0 0 0" xyz="-0.249 0.29153 -0.0702"/>
     <axis rpy="0 0 0" xyz="0 -1 0"/>
+    <limit effort="0.1" velocity="10.0"/>
   </joint>
   <link name="rear_right_wheel_link">
     <inertial>
@@ -142,5 +145,6 @@
     <child link="rear_right_wheel_link"/>
     <origin rpy="3.14 0 0" xyz="-0.249 -0.29153 -0.0702"/>
     <axis rpy="0 0 0" xyz="0 -1 0"/>
+    <limit effort="0.1" velocity="10.0"/>
   </joint>
 </robot>
