@@ -14,14 +14,14 @@
     <!-- Vehicle Geometries -->
     <xacro:property name="base_x_size" value="0.9250000" />
     <xacro:property name="base_y_size" value="0.380000" />
-    <xacro:property name="base_z_size" value="0.210000" />
+    <xacro:property name="base_z_size" value="0.220000" />
 
     <xacro:property name="wheelbase" value="0.498" />
     <xacro:property name="track" value="0.58306" />
     <xacro:property name="wheel_vertical_offset" value="-0.0702" />
 
-    <xacro:property name="wheel_length" value="1.1653e-01" />
-    <xacro:property name="wheel_radius" value="1.6459e-01" />
+    <xacro:property name="wheel_length" value="0.11653" />
+    <xacro:property name="wheel_radius" value="0.16459" />
 
     <!-- Base link -->
     <link name="base_link">
