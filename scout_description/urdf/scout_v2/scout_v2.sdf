@@ -1,0 +1,379 @@
+<sdf version='1.11'>
+  <model name='scout_v2'>
+    <link name='base_link'>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>40</mass>
+        <inertia>
+          <ixx>2.2886410000000001</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.1039760000000003</iyy>
+          <iyz>0</iyz>
+          <izz>3.4314650000000002</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_collision'>
+        <pose>0 0 0.0080000000000000002 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.92500000000000004 0.38 0.22</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name='base_link_collision_1'>
+        <pose>0 0 0.036666666666666667 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.1541666666666667 0.627 0.073333333333333334</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://scout_description/meshes/scout_v2/base_link.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='front_left_wheel' type='revolute'>
+      <pose relative_to='base_link'>0.249 0.29153000000000001 -0.070199999999999999 3.1415899999999999 0 0</pose>
+      <parent>base_link</parent>
+      <child>front_left_wheel_link</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='front_left_wheel_link'>
+      <pose relative_to='front_left_wheel'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>3</mass>
+        <inertia>
+          <ixx>0.023712</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.040634999999999998</iyy>
+          <iyz>0</iyz>
+          <izz>0.023712</izz>
+        </inertia>
+      </inertial>
+      <collision name='front_left_wheel_link_collision'>
+        <pose>0 0 0 1.5707949999999999 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.11652999999999999</length>
+            <radius>0.16458999999999999</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+              <ode>
+              <!-- Coulomb friction coefficients (dimensionless) -->
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+
+              <!-- Slip compliance (0 = no slip; small nonzero can help stability) -->
+              <slip1>0.01</slip1>
+              <slip2>0.01</slip2>
+              </ode>
+          </friction>
+
+          <contact>
+              <ode>
+              <!-- Contact stiffness/damping -->
+              <kp>1000000</kp>
+              <kd>100</kd>
+              </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='front_left_wheel_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://scout_description/meshes/scout_v2/wheel_type2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='front_right_wheel' type='revolute'>
+      <pose relative_to='base_link'>0.249 -0.29153000000000001 -0.070199999999999999 3.1415899999999999 0 0</pose>
+      <parent>base_link</parent>
+      <child>front_right_wheel_link</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='front_right_wheel_link'>
+      <pose relative_to='front_right_wheel'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>3</mass>
+        <inertia>
+          <ixx>0.023712</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.040634999999999998</iyy>
+          <iyz>0</iyz>
+          <izz>0.023712</izz>
+        </inertia>
+      </inertial>
+      <collision name='front_right_wheel_link_collision'>
+        <pose>0 0 0 1.5707949999999999 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.11652999999999999</length>
+            <radius>0.16458999999999999</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+              <ode>
+              <!-- Coulomb friction coefficients (dimensionless) -->
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+
+              <!-- Slip compliance (0 = no slip; small nonzero can help stability) -->
+              <slip1>0.01</slip1>
+              <slip2>0.01</slip2>
+              </ode>
+          </friction>
+
+          <contact>
+              <ode>
+              <!-- Contact stiffness/damping -->
+              <kp>1000000</kp>
+              <kd>100</kd>
+              </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='front_right_wheel_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://scout_description/meshes/scout_v2/wheel_type1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='rear_left_wheel' type='revolute'>
+      <pose relative_to='base_link'>-0.249 0.29153000000000001 -0.070199999999999999 3.1415899999999999 0 0</pose>
+      <parent>base_link</parent>
+      <child>rear_left_wheel_link</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rear_left_wheel_link'>
+      <pose relative_to='rear_left_wheel'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>3</mass>
+        <inertia>
+          <ixx>0.023712</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.040634999999999998</iyy>
+          <iyz>0</iyz>
+          <izz>0.023712</izz>
+        </inertia>
+      </inertial>
+      <collision name='rear_left_wheel_link_collision'>
+        <pose>0 0 0 1.5707949999999999 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.11652999999999999</length>
+            <radius>0.16458999999999999</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+              <ode>
+              <!-- Coulomb friction coefficients (dimensionless) -->
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+
+              <!-- Slip compliance (0 = no slip; small nonzero can help stability) -->
+              <slip1>0.01</slip1>
+              <slip2>0.01</slip2>
+              </ode>
+          </friction>
+
+          <contact>
+              <ode>
+              <!-- Contact stiffness/damping -->
+              <kp>1000000</kp>
+              <kd>100</kd>
+              </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='rear_left_wheel_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://scout_description/meshes/scout_v2/wheel_type1.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='rear_right_wheel' type='revolute'>
+      <pose relative_to='base_link'>-0.249 -0.29153000000000001 -0.070199999999999999 3.1415899999999999 0 0</pose>
+      <parent>base_link</parent>
+      <child>rear_right_wheel_link</child>
+      <axis>
+        <xyz>0 -1 0</xyz>
+        <limit>
+          <lower>-inf</lower>
+          <upper>inf</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='rear_right_wheel_link'>
+      <pose relative_to='rear_right_wheel'>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 0 0</pose>
+        <mass>3</mass>
+        <inertia>
+          <ixx>0.023712</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.040634999999999998</iyy>
+          <iyz>0</iyz>
+          <izz>0.023712</izz>
+        </inertia>
+      </inertial>
+      <collision name='rear_right_wheel_link_collision'>
+        <pose>0 0 0 1.5707949999999999 0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.11652999999999999</length>
+            <radius>0.16458999999999999</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <friction>
+              <ode>
+              <!-- Coulomb friction coefficients (dimensionless) -->
+              <mu>1.0</mu>
+              <mu2>1.0</mu2>
+
+              <!-- Slip compliance (0 = no slip; small nonzero can help stability) -->
+              <slip1>0.01</slip1>
+              <slip2>0.01</slip2>
+              </ode>
+          </friction>
+
+          <contact>
+              <ode>
+              <!-- Contact stiffness/damping -->
+              <kp>1000000</kp>
+              <kd>100</kd>
+              </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name='rear_right_wheel_link_visual'>
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://scout_description/meshes/scout_v2/wheel_type2.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <frame name='base_footprint_joint' attached_to='base_link'>
+      <pose>0 0 -0.23479 0 0 0</pose>
+    </frame>
+    <frame name='base_footprint' attached_to='base_footprint_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='inertial_joint' attached_to='base_link'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+    <frame name='inertial_link' attached_to='inertial_joint'>
+      <pose>0 0 0 0 0 0</pose>
+    </frame>
+
+    <plugin filename="libgz_ros2_control-system.so"
+        name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+     <parameters>/home/localuser/scout_ws/src/my_scout/config/my_controllers.yaml</parameters>
+    </plugin>
+
+    <ros2_control name="GazeboSystem" type="system">
+            <hardware>
+                <plugin>gz_ros2_control/GazeboSimSystem</plugin>
+            </hardware>
+            <joint name="front_right_wheel" >
+                <command_interface name="velocity">
+                    <param name="min">-10</param>
+                    <param name="max">10</param>
+                </command_interface>
+                <state_interface name="velocity"/>
+                <state_interface name="position"/>
+            </joint>
+            <joint name="front_left_wheel" >
+                <command_interface name="velocity">
+                    <param name="min">-10</param>
+                    <param name="max">10</param>
+                </command_interface>
+                <state_interface name="velocity"/>
+                <state_interface name="position"/>
+            </joint>
+            <joint name="rear_right_wheel" >
+                <command_interface name="velocity">
+                    <param name="min">-10</param>
+                    <param name="max">10</param>
+                </command_interface>
+                <state_interface name="velocity"/>
+                <state_interface name="position"/>
+            </joint>
+            <joint name="rear_left_wheel" >
+                <command_interface name="velocity">
+                    <param name="min">-10</param>
+                    <param name="max">10</param>
+                </command_interface>
+                <state_interface name="velocity"/>
+                <state_interface name="position"/>
+            </joint>
+    </ros2_control>
+
+  </model>
+</sdf>

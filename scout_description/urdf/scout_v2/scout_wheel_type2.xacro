@@ -32,7 +32,9 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
             <inertial>
                 <mass value="3" />
                 <origin xyz="0 0 0" />
-                <inertia ixx="0.7171" ixy="0" ixz="0" iyy="0.1361" iyz="0" izz="0.7171" />
+                
+                <!-- <inertia ixx="0.7171" ixy="0" ixz="0" iyy="0.1361" iyz="0" izz="0.7171" /> -->
+                <inertia ixx="0.023712" ixy="0" ixz="0" iyy="0.040635" iyz="0" izz="0.023712" />
             </inertial>
             <visual>
                 <origin xyz="0 0 0" rpy="0 0 0" />
@@ -45,6 +47,27 @@ ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSI
                 <geometry>
                     <cylinder length="${wheel_length}" radius="${wheel_radius}" />
                 </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                        <!-- Coulomb friction coefficients (dimensionless) -->
+                        <mu>5.0</mu>
+                        <mu2>5.0</mu2>
+
+                        <!-- Slip compliance (0 = no slip; small nonzero can help stability) -->
+                        <slip1>0.01</slip1>
+                        <slip2>0.01</slip2>
+                        </ode>
+                    </friction>
+
+                    <contact>
+                        <ode>
+                        <!-- Contact stiffness/damping -->
+                        <kp>1000000</kp>
+                        <kd>100</kd>
+                        </ode>
+                    </contact>
+                </surface>
             </collision>
         </link>
 
